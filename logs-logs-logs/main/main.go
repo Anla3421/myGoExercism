@@ -29,4 +29,9 @@ func main() {
 	fmt.Println(len3)
 	fmt.Println(len4)
 
+	for pos, char := range "안녕히😀, hello ： A Α α π " {
+		fmt.Printf("character %c starts at byte position %d\n", char, pos)
+	}
+	rune := 0x1F9E0
+	fmt.Printf("%c", rune)
 }

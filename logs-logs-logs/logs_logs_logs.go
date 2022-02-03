@@ -21,9 +21,6 @@ func Application(log string) string {
 			return s
 		}
 	}
-	// for pos, char := range "안녕히😀, hello ： A Α α π " {
-	// 	fmt.Printf("character %c starts at byte position %d\n", char, pos)
-	// }
 	return "default"
 }
 
