@@ -1,14 +1,13 @@
 package hamming
 
 import (
-	"fmt"
+	"errors"
 	"strings"
 )
 
 func Distance(a, b string) (int, error) {
 	if len(a) != len(b) {
-		err := fmt.Errorf("length is not the same")
-		return 0, err
+		return 0, errors.New("length is not the same")
 	}
 	var count int
 	newA := strings.Split(a, "")
