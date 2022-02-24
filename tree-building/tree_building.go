@@ -2,6 +2,7 @@ package tree
 
 import (
 	"errors"
+	"fmt"
 	"sort"
 )
 
@@ -24,10 +25,11 @@ func Build(records []Record) (*Node, error) {
 		})
 		temp := map[int]*Node{}
 		for k, v := range records {
-			if v.ID != k+1 {
+			if v.ID != k {
+				fmt.Println(v.ID, k)
 				return nil, errors.New("non-continuous")
 			}
-			if v.ID < v.Parent {
+			if v.ID <= v.Parent && v.ID != 0 {
 				return nil, errors.New("higher id parent of lower id")
 			}
 			if v.ID == 0 && v.Parent != 0 {
