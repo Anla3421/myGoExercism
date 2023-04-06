@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	"io"
+	"os"
 	"strings"
 	"tournament"
 )
 
 func main() {
-	var writer io.Writer
+	var myWriter io.Writer = os.Stdout
 	var input io.Reader
 	input = strings.NewReader(`Allegoric Alaskians;Blithering Badgers;win
 Devastating Donkeys;Courageous Californians;draw
@@ -23,6 +24,6 @@ Allegoric Alaskians;Courageous Californians;win
 	// Allegoric Alaskians;Courageous Californians;win
 	// `)
 
-	result := tournament.Tally(input, writer)
+	result := tournament.Tally(input, myWriter)
 	fmt.Println("result", result)
 }
